@@ -553,7 +553,7 @@ class fmtlogDetailT
       if (node.header)
         continue;
       node.header = node.tb->varq.front();
-      if (node.tb->shouldDeallocate)
+      if (!node.header && node.tb->shouldDeallocate)
       {
         delete node.tb;
         node = bgThreadBuffers.back();
